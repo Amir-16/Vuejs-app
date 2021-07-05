@@ -10,16 +10,16 @@
     <link rel="shortcut icon" href="images/logo.svg" />
     <title>Vue Cart App</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="vue/vue.global.js"></script>
+    <script src="vue/vue.global.js "></script>
   </head>
 
   <body>
-    <div  id="app">
+    <div  id="app" >
       <!-- header start -->
       <header>
         <div class="container react" id="header">
           <div>
-            <img class="logo" src="images/logo.svg" alt="Logo" />
+            <img class="logo"src="images/logo.svg" alt="Logo" />
           </div>
           <div class="textRight">
             <img src="images/vue.svg" alt="React" class="reactLogo" /><strong
@@ -35,17 +35,12 @@
         <div class="container react" id="iceCreamBuilder">
           <!-- icecream start -->
           <div>
-            <div class="icecream react" id="icecream">
+            <div class="icecream " id="icecream">
               <p class="cone"></p>
               <!-- <p>Please start adding scoops</p> -->
-              <div class="scoop chocolate"></div>
-              <div class="scoop vanilla"></div>
-              <div class="scoop orange"></div>
-              <div class="scoop strawberry"></div>
-              <div class="scoop chocolate"></div>
-              <div class="scoop vanilla react" id="scoop"></div>
-              <div class="scoop lemon"></div>
-              <div class="cherry"></div>
+              <div class="scoop chocolate" id="scoop"></div>
+              <div class="cherry" ></div>
+              
             </div>
           </div>
           <!-- ice cream end -->
@@ -55,12 +50,12 @@
             <div class="builder">
               <h3>Build your own Ice Cream Sundae</h3>
               <!-- items start -->
-              <div class="react" id="items">
+              <div id="items">
                 <ul>
                   <!-- item start -->
-                  <li class="react item" id="item">
-                    <span>Vanilla</span>
-                    <span class="quantity">2</span>
+
+                  <li  class="item"  v-for="variant in variants" :key="variant.id">
+                    <span>{{ variant.name }}</span>
                     <div class="right">
                       <button type="button" class="plus rounded">+</button>
                       <button type="button" class="minus rounded">-</button>
@@ -68,29 +63,8 @@
                   </li>
                   <!-- item end -->
 
-                  <li class="item">
-                    <span>Chocolate</span>
-                    <div class="right">
-                      <button type="button" class="plus rounded">+</button>
-                      <button type="button" class="minus rounded">-</button>
-                    </div>
-                  </li>
-
-                  <li class="item">
-                    <span>Strawberry</span>
-                    <div class="right">
-                      <button type="button" class="plus rounded">+</button>
-                      <button type="button" class="minus rounded">-</button>
-                    </div>
-                  </li>
-
-                  <li class="item">
-                    <span>Orange</span>
-                    <div class="right">
-                      <button type="button" class="plus rounded">+</button>
-                      <button type="button" class="minus rounded">-</button>
-                    </div>
-                  </li>
+                
+                  
                 </ul>
               </div>
               <!-- items end -->
@@ -160,7 +134,7 @@
 
       <!-- footer start -->
       <footer>
-        <div class="container react" id="footer">
+        <div class="container " id="footer">
           <div>
             Copyright &copy;2021.
           </div>
@@ -170,6 +144,10 @@
       <!-- footer end -->
     </div>
 
-    <script src="main.js"></script>
+    <script src="vue/main.js"></script>
+    <script>
+
+      const mountedapp =app.mount("#app");
+    </script>
   </body>
 </html>
