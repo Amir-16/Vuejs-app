@@ -86,7 +86,7 @@ span {
   width: 60px;
 }
 
-.vueLogo {
+.reactLogo {
   height: 60px;
   vertical-align: middle;
 }
@@ -100,7 +100,7 @@ span {
 }
 
 /* icecreamBuilder */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767.99px) {
   .mainBody .container {
     flex-direction: column;
   }
@@ -117,7 +117,7 @@ span {
   min-height: 632px;
 }
 
-@media only screen and (max-width: 600.99px) {
+@media only screen and (max-width: 767.99px) {
   .icecream {
     min-height: 0px !important;
   }
@@ -139,14 +139,6 @@ span {
   height: 77px;
   z-index: 3;
   margin-bottom: -10px;
-}
-
-.question {
-  background: url(images/question.png) center/cover no-repeat;
-  width: 48px;
-  height: 48px;
-  z-index: 3;
-  margin-bottom: 25px;
 }
 
 /* scoop */
@@ -242,7 +234,6 @@ div.scoop:first-of-type {
 
 .quantity {
   color: #5250507e;
-  vertical-align: top;
 }
 
 .quantity::after {
@@ -269,17 +260,10 @@ div.scoop:first-of-type {
   padding: 5px;
   margin-left: 5px;
 }
-/* footer */
-
-footer .container {
-  border-bottom: 0px !important;
-  padding-top: 0px;
-  color: #616163;
-}
 
 /* modal */
 .backdrop {
-  /* display: none; */
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -293,7 +277,7 @@ footer .container {
 }
 
 .modalBody {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -374,4 +358,13 @@ footer .container {
   border-bottom: 0px !important;
   padding-top: 0px;
   color: #616163;
+}
+
+/* debug purpose, remove in production */
+
+.react:after {
+  content: var(--contenti);
+  color: var(--color);
+  font-weight: bold;
+  font-style: italic;
 }
