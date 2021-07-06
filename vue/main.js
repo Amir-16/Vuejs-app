@@ -1,17 +1,18 @@
 const app =Vue.createApp({
 
-    data:function(){
+    data(){
 
         return{
 
-            variants:[
-                {id:1 , name:'Vanilla ',price: '120'},
-                {id:2, name:'Chocolate',price: '100'},
-                {id:3, name:'Strawberry',price: '150'},
-                {id:4, name:'Orange',price: '100'},
-                {id:5, name:'Lemon',price: '100'},
+            variants: [
+                
+                {id: 1 , name: 'Vanilla ',price: 120},
+                {id: 2, name:  'Chocolate',price: 140},
+                {id: 3, name: 'Strawberry',price: 120},
+                {id: 4, name: 'Orange',price: 150},
+                {id: 5, name: 'Lemon',price: 120},
             ],
-            cart:[]
+            cart: []
 
         }
     }, 
@@ -20,12 +21,17 @@ const app =Vue.createApp({
                 addToCart(variantId){
                     this.cart.push(this.variants.find(variant => variant.id =variantId));
                 },
-                removeItem(variantId){
+                removeFromCart(variantId){
                     
                     let remove = this.cart.findIndex(variant =>variant.id =variantId);
 
                     this.cart.splice(remove, 1);
                 }
+        },computed:{
+            total(){
+                
+                return this.cart.reduce((t,variant)=> t + variant.price, 0 );
+            }
         }
 
 })
